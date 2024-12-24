@@ -1,4 +1,4 @@
-import { envs } from './src/infrastructure/config/envs.js';
+import { envs } from './src/core/config/envs.js';
 
 export default {
   development: {
@@ -11,10 +11,10 @@ export default {
       port: envs.DB_PORT,
     },
     migrations: {
-      directory: './src/infrastructure/database/migrations',
+      directory: './src/core/database/migrations',
     },
     seeds: {
-      directory: './src/infrastructure/database/seeds',
+      directory: './src/core/database/seeds',
     },
     pool: {
       min: 2,
@@ -31,10 +31,10 @@ export default {
       port: envs.DB_PORT,
     },
     migrations: {
-      directory: './src/infrastructure/database/migrations',
+      directory: './src/core/database/migrations',
     },
     seeds: {
-      directory: './src/infrastructure/database/seeds',
+      directory: './src/core/database/seeds',
     },
     pool: {
       min: 2,

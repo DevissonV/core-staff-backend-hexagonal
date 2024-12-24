@@ -2,12 +2,12 @@
   "name": "core-staff-back-hexagonal",
   "version": "1.0.0",
   "description": "",
-  "main": "src/infrastructure/server.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/infrastructure/server.js",
-    "dev": "nodemon src/infrastructure/server.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "start-docker": "pnpm migrations && pnpm dev",
     "migrations": "pnpx knex migrate:latest"
   },

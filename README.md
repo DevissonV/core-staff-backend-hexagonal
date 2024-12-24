@@ -3,37 +3,10 @@
 
 ## Estructura del proyecto en arquitectura hexagonal
 ```
+┣ 📂.docker
+┃ ┗ 📜Dockerfile.dev
 ┣ 📂src
-┃ ┣ 📂application
-┃ ┃ ┗ 📂use-cases
-┃ ┃   ┣ 📂employees
-┃ ┃   ┃ ┣ 📜create-employee.js
-┃ ┃   ┃ ┣ 📜delete-employee.js
-┃ ┃   ┃ ┣ 📜get-employee-by-id.js
-┃ ┃   ┃ ┗ 📜update-employee.js
-┃ ┃   ┣ 📂requests
-┃ ┃   ┃ ┣ 📜create-request.js
-┃ ┃   ┃ ┣ 📜delete-request.js
-┃ ┃   ┃ ┣ 📜get-request-by-id.js
-┃ ┃   ┃ ┗ 📜update-request.js
-┃ ┃   ┗ 📂users
-┃ ┃     ┣ 📜delete-user.js
-┃ ┃     ┣ 📜login-user.js
-┃ ┃     ┗ 📜register-user.js
-┃ ┣ 📂domain
-┃ ┃ ┣ 📂entities
-┃ ┃ ┃ ┣ 📜employee.js
-┃ ┃ ┃ ┣ 📜request.js
-┃ ┃ ┃ ┗ 📜user.js
-┃ ┃ ┣ 📂repositories
-┃ ┃ ┃ ┣ 📜employee-repository.js
-┃ ┃ ┃ ┣ 📜request-repository.js
-┃ ┃ ┃ ┗ 📜user-repository.js
-┃ ┃ ┗ 📂services
-┃ ┃   ┣ 📜employee-service.js
-┃ ┃   ┣ 📜request-service.js
-┃ ┃   ┗ 📜user-service.js
-┃ ┣ 📂infrastructure
+┃ ┣ 📂core
 ┃ ┃ ┣ 📂config
 ┃ ┃ ┃ ┣ 📜envs.js
 ┃ ┃ ┃ ┗ 📜middlewares.js
@@ -42,32 +15,64 @@
 ┃ ┃ ┃ ┃ ┣ 📜20241205225059_create_employees_table.js
 ┃ ┃ ┃ ┃ ┣ 📜20241205225101_create_requests_table.js
 ┃ ┃ ┃ ┃ ┗ 📜20241206173037_create_users_table.js
-┃ ┃ ┃ ┣ 📂repositories
-┃ ┃ ┃ ┃ ┣ 📜knex-employee-repository.js
-┃ ┃ ┃ ┃ ┣ 📜knex-request-repository.js
-┃ ┃ ┃ ┃ ┗ 📜knex-user-repository.js
 ┃ ┃ ┃ ┣ 📂seeds
 ┃ ┃ ┃ ┗ 📜database.js
-┃ ┃ ┗ 📜server.js
-┃ ┣ 📂interfaces
-┃ ┃ ┣ 📂controllers
-┃ ┃ ┃ ┣ 📜employee-controller.js
-┃ ┃ ┃ ┣ 📜request-controller.js
-┃ ┃ ┃ ┗ 📜user-controller.js
 ┃ ┃ ┣ 📂middlewares
 ┃ ┃ ┃ ┗ 📜auth-middleware.js
-┃ ┃ ┗ 📂routes
-┃ ┃   ┣ 📜api-routes.js
-┃ ┃   ┣ 📜employee-routes.js
-┃ ┃   ┣ 📜request-routes.js
+┃ ┃ ┣ 📂routes
+┃ ┃ ┃ ┗ 📜api-routes.js
+┃ ┃ ┗ 📂utils
+┃ ┃   ┣ 📂response
+┃ ┃   ┃ ┗ 📜response.js
+┃ ┃   ┗ 📂validations
+┃ ┃     ┣ 📜employee-validation.js
+┃ ┃     ┣ 📜pagination-validation.js
+┃ ┃     ┗ 📜request-validation.js
+┃ ┣ 📂employees
+┃ ┃ ┣ 📂application
+┃ ┃ ┃ ┣ 📜create-employee-use-case.js
+┃ ┃ ┃ ┣ 📜delete-employee-use-case.js
+┃ ┃ ┃ ┣ 📜get-employee-by-id-use-case.js
+┃ ┃ ┃ ┗ 📜update-employee-use-case.js
+┃ ┃ ┣ 📂domain
+┃ ┃ ┃ ┣ 📜employee-entity.js
+┃ ┃ ┃ ┣ 📜employee-repository.js
+┃ ┃ ┃ ┗ 📜employee-service.js
+┃ ┃ ┣ 📂infrastructure
+┃ ┃ ┃ ┗ 📜knex-employee-repository.js
+┃ ┃ ┗ 📂interfaces
+┃ ┃   ┣ 📜employee-controller.js
+┃ ┃   ┗ 📜employee-routes.js
+┃ ┣ 📂requests
+┃ ┃ ┣ 📂application
+┃ ┃ ┃ ┣ 📜create-request-use-case.js
+┃ ┃ ┃ ┣ 📜delete-request-use-case.js
+┃ ┃ ┃ ┣ 📜get-request-by-id-use-case.js
+┃ ┃ ┃ ┗ 📜update-request-use-case.js
+┃ ┃ ┣ 📂domain
+┃ ┃ ┃ ┣ 📜request-entity.js
+┃ ┃ ┃ ┣ 📜request-repository.js
+┃ ┃ ┃ ┗ 📜request-service.js
+┃ ┃ ┣ 📂infrastructure
+┃ ┃ ┃ ┗ 📜knex-request-repository.js
+┃ ┃ ┗ 📂interfaces
+┃ ┃   ┣ 📜request-controller.js
+┃ ┃   ┗ 📜request-routes.js
+┃ ┣ 📂users
+┃ ┃ ┣ 📂application
+┃ ┃ ┃ ┣ 📜delete-user-use-case.js
+┃ ┃ ┃ ┣ 📜login-user-use-case.js
+┃ ┃ ┃ ┗ 📜register-user-use-case.js
+┃ ┃ ┣ 📂domain
+┃ ┃ ┃ ┣ 📜user-entity.js
+┃ ┃ ┃ ┣ 📜user-repository.js
+┃ ┃ ┃ ┗ 📜user-service.js
+┃ ┃ ┣ 📂infrastructure
+┃ ┃ ┃ ┗ 📜knex-user-repository.js
+┃ ┃ ┗ 📂interfaces
+┃ ┃   ┣ 📜user-controller.js
 ┃ ┃   ┗ 📜user-routes.js
-┃ ┗ 📂utils
-┃   ┣ 📂response
-┃   ┃ ┗ 📜response.js
-┃   ┗ 📂validations
-┃     ┣ 📜employee-validation.js
-┃     ┣ 📜pagination-validation.js
-┃     ┗ 📜request-validation.js
+┃ ┗ 📜server.js
 ┣ 📜.dockerignore
 ┣ 📜.env
 ┣ 📜.env-example
@@ -78,6 +83,7 @@
 ┣ 📜package.json
 ┣ 📜pnpm-lock.yaml
 ┗ 📜README.md
+
 
 ```
 
