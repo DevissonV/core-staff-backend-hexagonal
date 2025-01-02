@@ -128,7 +128,8 @@ Con npm
 Si prefieres utilizar Docker para simplificar la ejecución del proyecto, sigue estos pasos:
 
 ### Requisitos previos
-  - Tener Docker y Docker Compose(opcional) instalados en tu sistema.
+  - Tener Docker y Docker desktop(opcional) instalados en tu sistema.
+  - Tener configurado el archivo .env en la raiz del proyecto
 
 ### Pasos de ejecución
 
