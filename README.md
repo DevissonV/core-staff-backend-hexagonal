@@ -40,7 +40,7 @@
 ┃ ┃ ┃ ┗ 📜employee-service.js
 ┃ ┃ ┣ 📂infrastructure
 ┃ ┃ ┃ ┗ 📜knex-employee-repository.js
-┃ ┃ ┗ 📂interfaces
+┃ ┃ ┗ 📂presentation
 ┃ ┃   ┣ 📜employee-controller.js
 ┃ ┃   ┗ 📜employee-routes.js
 ┃ ┣ 📂requests
@@ -55,7 +55,7 @@
 ┃ ┃ ┃ ┗ 📜request-service.js
 ┃ ┃ ┣ 📂infrastructure
 ┃ ┃ ┃ ┗ 📜knex-request-repository.js
-┃ ┃ ┗ 📂interfaces
+┃ ┃ ┗ 📂presentation
 ┃ ┃   ┣ 📜request-controller.js
 ┃ ┃   ┗ 📜request-routes.js
 ┃ ┣ 📂users
@@ -69,7 +69,7 @@
 ┃ ┃ ┃ ┗ 📜user-service.js
 ┃ ┃ ┣ 📂infrastructure
 ┃ ┃ ┃ ┗ 📜knex-user-repository.js
-┃ ┃ ┗ 📂interfaces
+┃ ┃ ┗ 📂presentation
 ┃ ┃   ┣ 📜user-controller.js
 ┃ ┃   ┗ 📜user-routes.js
 ┃ ┗ 📜server.js
